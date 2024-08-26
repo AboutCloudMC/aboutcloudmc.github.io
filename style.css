@@ -1,0 +1,57 @@
+body {
+	background-color: black;
+}
+
+table {
+	outline: solid;
+	outline-color: #00FF00;
+	color: #00FF00; 
+}
+
+.abat {
+	margin-top: 50px;
+	outline: solid;
+	outline-color: #00FF00;
+}
+
+.abat #abatimg {
+	display: none;
+	margin: auto;
+	width: 1000px;
+	height: 400px;
+}
+
+.abat a {
+	font-size: 100px;
+	margin: auto;
+}
+
+button {
+	background-color: black;
+	margin-bottom: 10px;
+	color: #00FF00;
+	outline: solid;
+	outline-color: #00FF00;
+}
+
+h1 {
+	color: #00FF00;
+}
+
+.clicker {
+	outline: solid;
+	outline-color: #00FF00;
+}
+
+.clicker img {
+	display: block;
+	margin: auto;
+	width: 80px;
+	height: 80px;
+}
+
+.clicker p {
+	font-size: 20px;
+	color: #00FF00;
+	display: inline;
+}
