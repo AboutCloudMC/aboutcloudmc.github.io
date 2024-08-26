@@ -1,0 +1,79 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.topbar {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar .cookiecount {
+    display: inline-block;
+    font-size: 3em;
+}
+
+.topbar button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+
+    margin: 0.5em 1em;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+#reset {
+    background-color: #f00;
+}
+
+#reset:hover {
+    background-color: #f44;
+}
+
+#save {
+    background-color: #0f0;
+}
+
+#save:hover {
+    background-color: rgb(163, 255, 163);
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cookie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40em;
+    margin-top: 5em;
+}
+
+#cookie:active {
+    animation: clickAnimation 0.1s;
+}
+
+@keyframes clickAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
