@@ -13,7 +13,14 @@
         <button id="save" onclick="saveGame();">Save</button>
     </div>
     <div id="main">
-        <img src="img/cookie.png" alt="Cookie" id="cookie" onclick="clickCookie();">
+        <img src="img/cookie.png" alt="Cookie" id="cookie" onclick="clickCookie(1);">
+    </div>
+    <div id="shop">
+        <div class="shopitem" id="cursor_item">
+            <b>Cursor</b>
+            <p>Cost: <b id="cursor_cost">10</b></p>
+            <p>Current level: <b id="cursor_level">0</b></p>
+            <button onclick="buy(this);" id="cursor">Buy</button>
     </div>
     <script src="script.js"></script>
 </body>

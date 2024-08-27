@@ -1,19 +1,5 @@
 var saveSeconds = 10;
 
-function clickCookie() {
-    // Get the counter element
-    const counterElement = document.getElementById('counter');
-
-    // Get the current count
-    let count = parseInt(counterElement.innerText);
-
-    // Increment the count by 1
-    count += 1;
-
-    // Update the counter element with the new count
-    counterElement.innerText = count.toString();
-}
-
 function resetGame() {
     // Reset the counter
     const counterElement = document.getElementById('counter');
