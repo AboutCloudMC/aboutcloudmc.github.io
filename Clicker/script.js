@@ -1,18 +1,25 @@
-var saveSeconds = 10;
+let saveSeconds = 10;
 
 function resetGame() {
     // Reset the counter
-    const counterElement = document.getElementById('counter');
-    counterElement.innerText = '0';
+    setCount(0);
+    localStorage.clear();
+}
+
+function localSave(key, value) {
+    localStorage.setItem(key, value);
 }
 
 function saveGame() {
-    // Get the current count
-    const counterElement = document.getElementById('counter');
-    const count = parseInt(counterElement.innerText);
 
     // Save the count to local storage
-    localStorage.setItem('count', count.toString());
+    localSave('count', getCount().toString());
+
+    Array.prototype.forEach.call(document.getElementsByClassName('gadget'), gadget => {
+        let id = gadget.id;
+        localSave(id + '_level', getLevel(id).toString());
+        localSave(id + '_cost', getCost(id).toString());
+    });
 
     console.log('Game saved successfully!');
 }
@@ -20,15 +27,28 @@ function saveGame() {
 function loadGame() {
     // Check for the count variable in local storage
     if (localStorage.getItem('count')) {
-        // Get the saved count from local storage
-        const savedCount = parseInt(localStorage.getItem('count'));
+        let savedCount = parseInt(localStorage.getItem('count'));
+        setCount(savedCount);
+    } else {setCount(0);}
 
-        // Update the counter with the saved count
-        const counterElement = document.getElementById('counter');
-        counterElement.innerText = savedCount.toString();
 
-        console.log('Game loaded successfully!');
-    }
+    Array.prototype.forEach.call(document.getElementsByClassName('gadget'), gadget => {
+         let id = gadget.id;
+         let level = localStorage.getItem(id + '_level');
+         if(level !== null) {
+            setLevel(id, parseInt(level));
+        }
+
+        let cost = localStorage.getItem(id + '_cost');
+
+        if(cost !== null) {
+            setCost(id, parseInt(cost));
+        }
+
+        activateGadget(id);
+    });
+
+    console.log('Game loaded successfully!');
 }
 
 // Load the game when the website is loaded

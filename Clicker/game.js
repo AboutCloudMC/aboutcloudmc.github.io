@@ -1,3 +1,5 @@
+var clicklevel = 1;
+
 function clickCookie(multiply) {
     // Get the counter element
     const counterElement = document.getElementById('counter');
@@ -5,43 +7,34 @@ function clickCookie(multiply) {
     // Get the current count
     let count = parseInt(counterElement.innerText);
 
-    // Increment the count by 1
+    // Increment the count by 1*multiplier
     count += 1*parseInt(multiply);
 
     // Update the counter element with the new count
     counterElement.innerText = count.toString();
 }
 
+function manualClick() {
+    clickCookie(clicklevel);
+}
+
 function buy(elem) {
 
     console.log(elem.id);
-    // Get the counter element
-    let counterElement = document.getElementById('counter');
 
-    // Get the current count
-    let count = parseInt(counterElement.innerText);
-
-    // Get the cost of the gadget
-    let costElement = document.getElementById(elem.id + '_cost')
-    let cost = parseInt(costElement.innerText);
+    let count = getCount();
+    let cost = getCost(elem.id);
 
     // Check if the player has enough cookies
     if (count >= cost) {
-        // Deduct the cost from the count
+
         count -= cost;
+        setCount(count);
 
-        // Update the counter element with the new count
-        counterElement.innerText = count.toString();
-
-        // Increment the cost of the gadget
         cost *= 2;
-        costElement.innerHTML = cost.toString();
+        setCost(elem.id, cost);
 
-        // Increment the value of the gadget
-        let levelElement = document.getElementById(elem.id + '_level');
-        let level = parseInt(levelElement.innerText);
-        level += 1;
-        levelElement.innerHTML = level.toString();
+        setLevel(elem.id, getLevel(elem.id) + 1);
 
         activateGadget(elem.id);
     } else {
@@ -51,24 +44,25 @@ function buy(elem) {
 
 function activateGadget(gadget) {
     let level = parseInt(document.getElementById(gadget + '_level').innerHTML);
+    console.log(level);
     switch (gadget) {
         case 'cursor':
-            setInterval(clickCookie(parseInt(document.getElementById(gadget + '_level').innerHTML)), 1000);
+            clicklevel = level;
             break;
-        case 'grandma':
-            setInterval(clickCookie, 2000);
+        case 'autoclicker':
+            setInterval(() => clickCookie(level), 1000);
             break;
         case 'factory':
-            setInterval(clickCookie, 5000);
+            setInterval(() => clickCookie(level), 1000);
             break;
         case 'cookie_farm':
-            setInterval(clickCookie, 10000);
+            setInterval(() => clickCookie(level), 1000);
             break;
         case 'cookie_factory':
-            setInterval(clickCookie, 20000);
+            setInterval(() => clickCookie(level), 1000);
             break;
         case 'cookie_mine':
-            setInterval(clickCookie, 50000);
+            setInterval(() => clickCookie(level), 1000);
             break;
     }
 }
