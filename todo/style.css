@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #212A31;
+    margin: 0;
+    padding: 0;
+}
+
+#bar {
+    background-color: #2C3E50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+#main {
+    margin: 0 auto;
+}
+
+.todoelem {
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.checkbox-wrapper-4 {
+    
+}
+
+.btn_delete {
+    display: none; /* Initially hide the delete button */
+    position: absolute; /* Position it absolutely within the .todoelem */
+    right: 50px; /* Adjust as needed */
+}
+
+.todoelem:hover .btn_delete {
+    display: block; /* Show the delete button when .todoelem is hovered */
+}

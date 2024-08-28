@@ -18,6 +18,11 @@ function manualClick() {
     clickCookie(clicklevel);
 }
 
+function autoClick(multiply) {
+    clickCookie(multiply);
+    document.getElementById('animationElement').style.animation = 'clickAnimation 0.1s';
+}
+
 function buy(elem) {
 
     console.log(elem.id);
@@ -50,7 +55,7 @@ function activateGadget(gadget) {
             clicklevel = level;
             break;
         case 'autoclicker':
-            setInterval(() => clickCookie(level), 1000);
+            setInterval(() => autoClick(level), 1000);
             break;
         case 'factory':
             setInterval(() => clickCookie(level), 1000);

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Kekse Clicker</title>
+</head>
+<body>
+    <div class="topbar">
+        <button id="reset" onclick="resetGame();">Reset</button>
+        <b id="counter" class="cookiecount">0</b>
+        <button id="save" onclick="saveGame();">Save</button>
+    </div>
+    <div id="main">
+        <img src="img/cookie.png" alt="Cookie" id="cookie" onclick="manualClick();">
+    </div>
+    <div id="shop">
+        <div class="shopitem" id="autoclicker_item">
+            <b class="itemname">Auto-Clicker</b>
+            <p class="itemcost">Cost: <b class="itemcost" id="autoclicker_cost">50</b></p>
+            <p class="itemlevel" >Current level: <b class="itemlevel" id="autoclicker_level">0</b></p>
+            <button onclick="buy(this);" id="autoclicker" class="gadget">Buy</button>
+        </div>
+        <div class="shopitem" id="cursor_item">
+            <b class="itemname">Wurstfinger</b>
+            <p class="itemcost">Cost: <b class="itemcost" id="cursor_cost">10</b></p>
+            <p class="itemlevel" >Current level: <b class="itemlevel" id="cursor_level">1</b></p>
+            <button onclick="buy(this);" id="cursor" class="gadget">Buy</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

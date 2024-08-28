@@ -1,13 +1,21 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     overflow: hidden;
+    background-color: #2E3944;
+    overflow-x: hidden;
 }
 
 .topbar {
-    background-color: #333;
+    background-color: #212A31;
     color: white;
     padding: 1em;
     text-align: center;
@@ -60,9 +68,11 @@ body {
     align-items: center;
     width: 40em;
     margin-top: 5em;
+    cursor: pointer;
 }
 
 #cookie:active {
+    -webkit-animation: clickAnimation 0.1s;
     animation: clickAnimation 0.1s;
 }
 
@@ -80,7 +90,7 @@ body {
 
 #shop {
     display: flex;
-    border-top: 3px solid #000000;
+    border-top: 6px solid #212A31;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -88,9 +98,9 @@ body {
 }
 
 .shopitem {
-    background-color: #f5f5f5;
+    background-color: #27313A ;
     border-radius: 10px;
-    border: 3px solid #000000;
+    border: 3px solid #212A31;
     padding: 1em;
     margin: 1em;
     width: 15em;
@@ -101,6 +111,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    color: #D3D9D4;
 }
 
 .shopitem .itemname {
@@ -111,12 +123,11 @@ body {
 
 .shopitem .itemcost {
     font-size: 1em;
-    color: #888;
     margin-bottom: 0.5em;
 }
 
 .shopitem button {
-    background-color: #555;
+    background-color: #1C252D;
     color: white;
     border: none;
     padding: 0.5em 1em;
