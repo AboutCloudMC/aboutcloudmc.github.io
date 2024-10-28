@@ -1,5 +1,10 @@
-Array.prototype.forEach.call(document.getElementsByClassName('project'), project => {
-    project.addEventListener('click', function() {
-        window.location.href = project.id + '.html';
-    });
-});
+
+const projects = document.getElementsByClassName("project");
+
+for(let project of projects) {
+    project.onclick = function() {
+        window.location = "./" + project.id + "/app.html";
+        console.log("clicked " + project.id);
+        
+    };
+}
