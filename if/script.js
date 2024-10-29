@@ -1,10 +1,9 @@
 function check(textA, textB) {		
 	let intA = parseInt(textA.value);
 	let isNegative = Boolean(intA < 0);
-	textB.value = isNegative;
-	if(intA < 0) {
-		//bla
+	if(intA == 0) {
+		textB.value = 0;
 	} else {
-		//else bla
+		textB.value = isNegative;
 	}
 }
